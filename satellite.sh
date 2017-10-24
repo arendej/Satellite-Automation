@@ -77,3 +77,4 @@ echo "*-------------- Updating Firewall ---------------*"
 echo "*------------------------------------------------*"
 firewall-cmd --zone=public --add-service=RH-Satellite-6 --permanent
 firewall-cmd --zone=public --add-service=RH-Satellite-6
+firewall-cmd --reload
