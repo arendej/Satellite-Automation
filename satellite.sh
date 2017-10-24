@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Usage - ./satellite.sh <redhat_portal_password>
+# Usage - ./satellite.sh <redhat_portal_username> <redhat_portal_password>
 
 EMAIL=$1
 PASSWORD=$2
