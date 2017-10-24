@@ -2,8 +2,8 @@
 
 # Usage - ./satellite.sh <redhat_portal_password>
 
-EMAIL="jacob.mammoliti@arctiq.ca"
-PASSWORD=$1
+EMAIL=$1
+PASSWORD=$2
 
 SATELLITE_DEFAULT_ORG="Lab"
 SATELLITE_DEFAULT_LOCATION="Toronto"
@@ -17,7 +17,8 @@ echo "*------------------------------------------------*"
 echo "*----- Registering server to Red Hat Portal -----*"
 echo "*------------------------------------------------*"
 subscription-manager register --username $EMAIL --password $PASSWORD
-POOL_ID="$(subscription-manager list --available --matches "Red Hat Satellite" | grep "Pool ID:" | cut -d ':' -f 2 | awk 'FNR == 1 {print}')"
+POOL_ID="$(subscription-manager list --available --matches "Red Hat Satellite" \
+                | grep "Pool ID:" | cut -d ':' -f 2 | awk 'FNR == 1 {print}')"
 
 # Attach Satellite subscription to server
 echo ""
